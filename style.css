@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to right, #89216b, #da4453);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.flip-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1200;
+}
+
+/* .flip-container:hover .card {
+  transform: rotateY(-180deg);
+} */
+
+.flipCard {
+  transform: rotateY(-180deg);
+}
+
+.card {
+  width: 640px;
+  height: 480px;
+  transition: all 700ms ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  width: 640px;
+  height: 480px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: url(./img/front.png) no-repeat center/cover;
+}
+
+.back {
+  background: url(./img/back.png) no-repeat center/cover;
+  transform: rotateY(-180deg);
+}
